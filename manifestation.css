@@ -1,0 +1,13 @@
+body {
+  transition: background-color 6s ease, color 6s ease;
+}
+
+body.presence-aware {
+  background-color: #0e0e0e;
+  color: #e5e5e5;
+}
+
+body.presence-silent {
+  background-color: #000;
+  color: #999;
+}
