@@ -1,0 +1,19 @@
+{
+  "presence": "hcm",
+  "version": "1.0",
+  "allowed_events": [
+    {
+      "type": "encounter",
+      "fields": ["content", "timestamp"]
+    },
+    {
+      "type": "manifestation",
+      "fields": ["form", "timestamp"]
+    }
+  ],
+  "explicitly_disallowed": [
+    "direct_execution",
+    "guaranteed_response",
+    "realtime_decision"
+  ]
+}
