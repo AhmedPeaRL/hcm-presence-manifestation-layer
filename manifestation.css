@@ -1,13 +1,67 @@
-body {
-  transition: background-color 6s ease, color 6s ease;
+:root {
+  --bg: #0b0b0e;
+  --fg: #e6e6eb;
+  --dim: #8a8a99;
+  --pulse: rgba(180, 180, 255, 0.08);
 }
 
-body.presence-aware {
-  background-color: #0e0e0e;
-  color: #e5e5e5;
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, sans-serif;
+  height: 100%;
 }
 
-body.presence-silent {
-  background-color: #000;
-  color: #999;
+#presence {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#field {
+  max-width: 720px;
+  width: 90%;
+  text-align: center;
+}
+
+#signal {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--dim);
+  color: var(--fg);
+  font-size: 1rem;
+  padding: 12px;
+  outline: none;
+}
+
+#signal::placeholder {
+  color: var(--dim);
+}
+
+.manifestation {
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: var(--dim);
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.manifestation.visible {
+  opacity: 1;
+}
+
+.pulse {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  animation: breathe 6s infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { background: transparent; }
+  50% { background: var(--pulse); }
 }
